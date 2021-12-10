@@ -1,7 +1,7 @@
 // config/database.js
 module.exports = {
-    'url' : 'mongodb+srv://demo:demo@roulette.alvha.mongodb.net/freebie?retryWrites=true&w=majority',
-    'dbName': 'freebie'
+    'url' : 'mongodb+srv://freebie:freebie@cluster0.6rhqy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+    'dbName': 'Freebie'
 };
 
 

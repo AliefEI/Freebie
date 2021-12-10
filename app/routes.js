@@ -8,8 +8,9 @@ module.exports = function (app, passport, db, multer, multerS3, s3, aws, ObjectI
   var uploadS3 = multer({
     storage: multerS3({
       s3: s3,
-      bucket: 'rc-2021a-freebie',
-      acl: 'public-read',
+      // ContentType: 'image/jpeg',
+      bucket: 'rc-2021alief-freebie',
+      
       metadata: function (req, file, cb) {
         cb(null, {
           fieldName: file.fieldname
@@ -107,6 +108,7 @@ module.exports = function (app, passport, db, multer, multerS3, s3, aws, ObjectI
   })
 
   app.post('/createProfile', profileUpload, function (req, res) {
+    //console.log(req.file.profileImage)
     const data = {
       userId: req.user._id,
       profileImage: req.files.profileImage[0].key,
